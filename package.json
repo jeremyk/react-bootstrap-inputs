@@ -1,0 +1,25 @@
+{
+  "name": "react-bootstrap-inputs",
+  "version": "0.0.1",
+  "description": "Wrappers around react-bootstrap form inputs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathandpencil/react-bootstrap-inputs.git"
+  },
+  "keywords": [
+    "react",
+    "bootstrap",
+    "inputs",
+    "react-bootstrap"
+  ],
+  "author": "Joseph Misiti <joseph.misiti@mathandpencil.com> (http://www.josephmisiti.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathandpencil/react-bootstrap-inputs/issues"
+  },
+  "homepage": "https://github.com/mathandpencil/react-bootstrap-inputs#readme"
+}
