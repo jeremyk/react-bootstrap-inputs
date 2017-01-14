@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import {
     Col,
     ControlLabel,
-    FormControl,
+    Checkbox,
     FormGroup
 } from 'react-bootstrap';
 
@@ -19,7 +19,7 @@ const propTypes = {
     obj: PropTypes.object.isRequired,
 };
 
-class TextInput extends React.Component {
+class CheckInput extends React.Component {
 
     constructor(props, context) {
         super(props, context);
@@ -27,29 +27,36 @@ class TextInput extends React.Component {
     }
 
     onHandleChange(fieldName, e) {
-        this.props.onChange(fieldName, e.target.value);
+        console.log( fieldName, e.target.checked);
+        this.props.onChange(fieldName, e.target.checked);
     }
 
     render() {
-
+        var self = this;
         var value = this.props.obj[this.props.name] || '';
-
+        var html;
+        if(value === true) {
+            html = (<Checkbox name={self.props.name} checked value={value}
+                onChange={this.onHandleChange.bind(self, self.props.name)} >
+            </Checkbox>);
+        } else {
+            html = (<Checkbox name={self.props.name} value={value}
+                onChange={this.onHandleChange.bind(self, self.props.name)} >
+            </Checkbox>);
+        }
         return (<div>
             <FormGroup>
               <Col componentClass={ControlLabel} sm={4}>
                 {this.props.label}
               </Col>
               <Col sm={8}>
-                <FormControl type="text" name={this.props.name}
-                    placeholder={this.props.placeholder}
-                    value={value}
-                    onChange={this.onHandleChange.bind(this, this.props.name)}/>
+              {html}
               </Col>
             </FormGroup>
         </div>);
     }
 }
 
-TextInput.propTypes = propTypes;
+CheckInput.propTypes = propTypes;
 
-export default TextInput;
+export default CheckInput;
