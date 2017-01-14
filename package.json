@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-inputs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Wrappers around react-bootstrap form inputs",
   "main": "index.js",
   "scripts": {
